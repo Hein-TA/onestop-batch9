@@ -1,0 +1,31 @@
+<!-- Title -->
+<h4>Member Sign Up</h4>
+<p>Welcome to Balance management System</p>
+
+<!-- Sign In Form -->
+<form [formGroup]="form">
+    <!-- Name -->
+    <app-form-group label="Name" [valid]="form.get('name')?.valid">
+        <input formControlName="name" type="text" class="form-control" placeholder="Enter your name">
+     </app-form-group>
+
+   <!-- Login Id -->
+    <app-form-group label="Login ID" [valid]="form.get('username')?.valid">
+       <input formControlName="username" type="text" class="form-control" placeholder="Enter login id">
+    </app-form-group>
+
+   <!-- Password -->
+   <app-form-group label="Password" [valid]="form.get('password')?.valid">
+       <input formControlName="password" type="password" class="form-control" placeholder="********">
+   </app-form-group>
+   <!-- Button -->
+    <div>
+       <button (click)="signUp()" [class.disabled]="!form.valid" type="button" class="btn btn-outline-primary me-2">
+           <i class="bi-person-add"></i> Sign Up
+       </button>
+
+       <a [routerLink]="['/anonymous', 'signin']" href="#" class="btn btn-outline-info">
+           <i class="bi-unlock"> Sign In</i>
+       </a>
+    </div>
+</form>
