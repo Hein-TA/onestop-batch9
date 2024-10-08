@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { WidgetsModule } from '../../../widgets/widgets.module';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +13,7 @@ import { RouterLink } from '@angular/router';
 export class SignupComponent {
   form: FormGroup;
 
-  constructor(builder: FormBuilder) {
+  constructor(builder: FormBuilder, private router: Router) {
     this.form = builder.group({
       name: ['', Validators.required],
       username: ['', [Validators.required, Validators.minLength(6)]],
@@ -22,6 +22,6 @@ export class SignupComponent {
   }
 
   signUp() {
-    
+    this.router.navigate(['/admin']);
   }
 }

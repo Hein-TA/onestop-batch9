@@ -3,6 +3,7 @@ import { MembersComponent } from './pages/members/members.component';
 import { AnonymousComponent } from './pages/anonymous/anonymous.component';
 import { SigninComponent } from './pages/anonymous/signin/signin.component';
 import { SignupComponent } from './pages/anonymous/signup/signup.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 export const routes: Routes = [
     {
@@ -35,5 +36,9 @@ export const routes: Routes = [
         path: '',
         redirectTo: '/anonymous',
         pathMatch: 'full'
+    },
+    {
+        path: 'admin',
+        component: AdminComponent
     }
 ];

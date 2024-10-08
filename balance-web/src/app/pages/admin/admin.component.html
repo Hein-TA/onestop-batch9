@@ -1,0 +1,64 @@
+<div class="container mt-4 d-flex justify-content-between">
+    <h3><i class="bi-bar-chart me-2"></i> Balance Management System</h3>
+
+    <div>
+        <ul class="nav nav-underline">
+            <li class="nav-item">
+                <a href="#" class="nav-link active">
+                    <i class="bi-people"></i> Members
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="bi-lock"></i> Sign out
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<main class="container mt-4">
+
+    <form action="#" class="row">
+        <app-form-group label="Entry From" class="col-auto">
+            <input type="date" class="form-control">
+        </app-form-group>
+        <app-form-group label="Entry to" class="col-auto">
+            <input type="date" class="form-control">
+        </app-form-group>
+
+        <app-form-group label="Last Access From" class="col-auto">
+            <input type="date" class="form-control">
+        </app-form-group>
+        <app-form-group label="Last Access From" class="col-auto">
+            <input type="date" class="form-control">
+        </app-form-group>
+        
+        <app-form-group label="keyword" class="col-auto">
+            <input type="text" placeholder="Name or Email" class="form-control">
+        </app-form-group>
+
+        <div class="col btn-wrapper">
+            <button type="button" class="btn btn-outline-success">
+                <i class="bi-search"></i> Search
+            </button>
+        </div>
+    </form>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Member</th>
+                <th>Email</th>
+                <th>Entry At</th>
+                <th>Last Access</th>
+                <th class="text-end">Ledgers</th>
+                <th class="text-end">Last Month Entries</th>
+                <th class="text-end">Transactions</th>
+            </tr>
+        </thead>
+    </table>
+
+    <app-pagination></app-pagination>
+</main>

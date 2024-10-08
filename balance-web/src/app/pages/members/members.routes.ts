@@ -4,6 +4,8 @@ import { BalanceReportComponent } from "./balance-report/balance-report.componen
 import { BalanceManagementComponent } from "./balance-management/balance-management.component";
 import { LedgerManagementComponent } from "./ledger-management/ledger-management.component";
 import { ChangePasswordComponent } from "./change-password/change-password.component";
+import { BalanceEditComponent } from "./balance-management/balance-edit/balance-edit.component";
+import { BalanceDetailsComponent } from "./balance-management/balance-details/balance-details.component";
 
 export const routes: Routes = [
     {
@@ -17,9 +19,27 @@ export const routes: Routes = [
         component: BalanceReportComponent
     },
     {
-        path: 'management/:type',
+        path: 'management',
         title: 'Management',
-        component: BalanceManagementComponent
+        children: [
+            {
+                path: 'list/:type',
+                component: BalanceManagementComponent
+            },
+            {
+                path: 'edit/:type',
+                component: BalanceEditComponent
+            },
+            {
+                path: 'details/:id',
+                component: BalanceDetailsComponent
+            },
+            {
+                path: '',
+                redirectTo: '/members/management/list/Debit',
+                pathMatch: 'full',
+            },
+        ]
     },
     {
         path: 'ledger',

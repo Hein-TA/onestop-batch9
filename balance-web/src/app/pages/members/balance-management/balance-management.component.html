@@ -1,8 +1,58 @@
 <app-page-content [title]="title()" [icon]="icon()">
 
     <!-- Search Bar -->
+    <form action="#" class="row mt-4">
+        <!-- Date From -->
+        <app-form-group label="From" class="col-auto">
+            <input type="date" class="form-control">
+        </app-form-group>
+        <!-- Date To -->
+        <app-form-group label="To" class="col-auto">
+            <input type="date" class="form-control">
+        </app-form-group> 
+
+        <!-- Ledger Code -->
+        <app-form-group label="Ledger" class="col-auto">
+            <input type="text" placeholder="Ledger code" class="form-control">
+        </app-form-group>
+
+        <!-- Search Button -->
+        <div class="col btn-wrapper">
+           <button type="button" class="btn btn-outline-info"><i class="bi-search"></i> Search</button>
+           <a [routerLink]="['../../edit/', type()]" routerLinkActive="router-link-active"  class="btn btn-outline-primary px-3 ms-2"><i class="bi-plus"></i> Add New</a>
+        </div>
+     </form>
 
     <!-- Table -->
+     <table class="table table-bordered table-striped">
+        <thead>
+            <tr class="text-center">
+                <th>Entry ID</th>
+                <th>Entry At</th>
+                <th>Ledger</th>
+                <th>Particular</th>
+                <th class="text-end">Items</th>
+                <th class="text-end">Amount</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>yyyyMMdd-00</td>
+                <td>2024-10-02</td>
+                <td>General Usage</td>
+                <td>Water Fees</td>
+                <td class="text-end">1</td>
+                <td class="text-end">5,000</td>
+                <td class="text-center">
+                    <a [routerLink]="['../../','details', 1]" routerLinkActive="router-link-active"  class="icon-link">
+                        <i class="bi-arrow-right"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+     </table>
 
     <!-- Pagination -->
+    <app-pagination></app-pagination>
 </app-page-content>
