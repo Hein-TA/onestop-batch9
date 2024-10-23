@@ -9,9 +9,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 public record LedgerEntryForm(
-        @NotNull(message = "Please enter ledger type.") LedgerType type,
-        @NotNull(message = "Please enter issue at.") LocalDate issueAt,
         @NotEmpty(message = "Please enter ledger code.") String ledgerCode,
+        @NotNull(message = "Please enter issue at.") LocalDate issueAt,
         String particular,
         List<@Valid LedgerEntryFormItem> items) {
 }
